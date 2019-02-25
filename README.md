@@ -1,2 +1,4 @@
 # Dots-and-Boxes-by-python-in-Console
-Two versions  of   dots  and  boxes  game  are  submitted. Both  of are played  on pyton  console, not on  special gui. 
+ A simple version  of   dots  and  boxes  game  is  submitted. It is played  on pyton  console, not on  special gui. 
+
+On  human_vs_computer.py,   computer strategy is   based  on  probabilistic  monte carlo algorithms. Not  perfect  but works 
