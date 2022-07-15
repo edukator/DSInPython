@@ -1,0 +1,39 @@
+from collections import OrderedDict
+def topView(root):
+    #Write your code here
+    visited=[root]
+    levelDict=OrderedDict()
+    levelDict[root.info]=0
+    levelStack=[0]
+    printDict={0:root.info}
+    current=visited.pop(0)
+   
+    while(True):
+        level=levelDict[current.info]
+
+        if(current.left):
+            visited.append(current.left)
+            levelDict[current.left.info]=(level-1)
+            if(level-1 not in levelStack):
+                levelStack.append(level-1)
+                printDict[(level-1)]=current.left.info
+                 
+
+                
+        if(current.right):
+            visited.append(current.right)
+            levelDict[current.right.info]=level+1
+            if(level+1  not in levelStack):
+                levelStack.append(level+1)
+                printDict[(level+1)]=current.right.info
+             
+                
+        
+                
+        if (len(visited)>0): 
+            current=visited.pop(0)
+        else:
+            break
+    printDict=sorted(printDict.items())
+    for v in printDict:
+        print(v[1],end=" ")
